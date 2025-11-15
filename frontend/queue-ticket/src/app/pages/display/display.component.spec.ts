@@ -47,6 +47,7 @@ describe('DisplayComponent', () => {
   });
 
   it('ควรอัปเดต currentDateTime ตอน ngOnInit', () => {
+    queueServiceSpy.getCurrent.and.returnValue(of('A1'));
     const updateSpy = spyOn<any>(component as any, 'updateDateTime').and.callThrough();
 
     component.ngOnInit();
@@ -62,6 +63,7 @@ describe('DisplayComponent', () => {
   });
 
   it('ควร clear timer ตอน ngOnDestroy', () => {
+    queueServiceSpy.getCurrent.and.returnValue(of('A1'));
     component.ngOnInit();
 
     const clearSpy = spyOn(window, 'clearInterval').and.callThrough();

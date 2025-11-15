@@ -28,28 +28,28 @@ describe('ReceiveComponent', () => {
     component = fixture.componentInstance;
   });
 
-  it('ควรโหลดคิวปัจจุบันตอน ngOnInit', () => {
-    queueServiceSpy.getCurrent.and.returnValue(of('A5'));
+  it('ควรโหลดหมายเลขคิวปัจจุบันตอน ngOnInit', () => {
+    queueServiceSpy.getCurrent.and.returnValue(of('B5'));
 
     component.ngOnInit();
     fixture.detectChanges();
 
     expect(queueServiceSpy.getCurrent).toHaveBeenCalled();
-    expect(component.currentQueue).toBe('A5');
+    expect(component.currentQueue).toBe('B5');
   });
 
-  it('ควรรับบัตรคิวใหม่เมื่อกดปุ่ม next()' , () => {
+  it('ควรเรียก service.next และ navigate ไปหน้า display เมื่อ onReceiveTicket()', () => {
     queueServiceSpy.next.and.returnValue(of('A6'));
 
     component.onReceiveTicket();
 
     expect(queueServiceSpy.next).toHaveBeenCalled();
-    expect(component.currentQueue).toBe('A6');
+    expect(routerSpy.navigate).toHaveBeenCalledWith(['/display']);
   });
 
-  it('ควร navigate ไปหน้า display หากมีปุ่มไปหน้าแสดงผล', () => {
+  it('ควร navigate ไปหน้า reset หากมีปุ่มไปหน้าแสดงผล', () => {
     component.goToReset();
 
-    expect(routerSpy.navigate).toHaveBeenCalledWith(['/display']);
+    expect(routerSpy.navigate).toHaveBeenCalledWith(['/reset']);
   });
 });
