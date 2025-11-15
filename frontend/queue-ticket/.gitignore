@@ -1,59 +1,77 @@
-# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+# ===========================
+# Angular / Frontend
+# ===========================
 
 # Compiled output
-/dist
-/tmp
-/out-tsc
-/bazel-out
+dist/
+tmp/
+out-tsc/
+bazel-out/
 
 # Node
-/node_modules
+node_modules/
 npm-debug.log
 yarn-error.log
+pnpm-debug.log
 
-# IDEs and editors
-.idea/
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
+# Angular cache
+.angular/cache/
 
-# Visual Studio Code
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-.history/*
-
-# Miscellaneous
-/.angular/cache
-.sass-cache/
-/connect.lock
-/coverage
-/libpeerconnection.log
+# Misc
+coverage/
+libpeerconnection.log
 testem.log
-/typings
+typings/
+connect.lock
+sass-cache/
 
 # System files
 .DS_Store
 Thumbs.db
 
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/
+
+# ===========================
+# Backend (.NET)
+# ===========================
+
 # Visual Studio
 .vs/
 *.user
 *.suo
-backend/QueueApi/bin/
-backend/QueueApi/obj/
+*.cache
+*.pdb
 
-# VS files
-backend/QueueApi/.vs/
-.vs/
-*.user
-*.suo
-
-# build artifacts
+# Build artifacts
 bin/
 obj/
+[Bb]in/
+[Oo]bj/
+
+# ASP.NET publish directory
+**/publish/
+**/Publish/
+
+# IIS Express
+*.vspscc
+Generated\ Files/
+
+# ===========================
+# Backend project-specific
+# ===========================
+
+backend/QueueApi/bin/
+backend/QueueApi/obj/
+backend/QueueApi/.vs/
+
+# ===========================
+# Others
+# ===========================
+*.log
+*.tmp
