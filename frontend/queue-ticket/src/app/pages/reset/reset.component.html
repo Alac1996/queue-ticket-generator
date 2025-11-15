@@ -1,1 +1,16 @@
-<p>reset works!</p>
+<div class="screen">
+    <div class="header">IT 05-3</div>/
+
+    <div class="content">
+        <div class="label">หมายเลขคิวปัจจุบัน</div>
+        <div class="queue-number">{{ currentQueue }}</div>
+        
+        <button class="btn-main" (click)="reset()">
+            ล้างคิว
+        </button>
+
+        <button class="btn-secondary" (click)="backToReceive()">
+            กลับไปรับบัตรคิว
+        </button>
+    </div>
+</div>
