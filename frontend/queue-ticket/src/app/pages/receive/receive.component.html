@@ -1,0 +1,17 @@
+<div class="screen">
+    <div class="header">IT 05-1</div>
+
+    <div class="content">
+        <button class="btn-main" (click)="onReceiveTicket()">
+            รับบัตรคิว
+        </button>
+
+        <div class="current">
+             <span>{{ currentQueue }}</span>
+        </div>
+
+        <button class="btn-secondary" (click)="goToReset()">
+            ล้างคิว
+        </button>
+    </div>
+</div>

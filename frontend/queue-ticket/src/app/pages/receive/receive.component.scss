@@ -1,0 +1,49 @@
+.screen {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background-color:#06a94d;
+    color: #fff;
+    padding: 8px 16px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+}
+
+.btn-main {
+    font-size: 40px;
+    padding: 50px 60px;
+    border: none;
+    border-radius: 12px;
+    background-color: #2f6fed;
+    width: 40%;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btn-secondary {
+    font-size: 20px;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    background-color: #e0e0e0;
+    width: 20%;
+    cursor: pointer;
+}
+
+.current span {
+    font-weight: bold;
+    font-size: 24px;
+}
