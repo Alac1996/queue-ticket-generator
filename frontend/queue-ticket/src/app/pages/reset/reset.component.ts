@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   templateUrl: './reset.component.html',
   styleUrls: ['./reset.component.scss']
 })
-export class ResetComponent {
+export class ResetComponent implements OnInit {
 
   currentQueue = '00';
 
@@ -15,6 +15,17 @@ export class ResetComponent {
     private queueService: QueueService,
     private router: Router
   ) {}
+
+  ngOnInit(): void {
+    this.loadCurrentQueue();
+  }
+
+  private loadCurrentQueue(): void {
+    this.queueService.getCurrent().subscribe({
+      next: (q) => this.currentQueue = q,
+      error: (err) => console.log(err)
+    });
+  }
 
   reset(): void {
     this.queueService.reset().subscribe(q => {

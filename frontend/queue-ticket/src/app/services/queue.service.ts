@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class QueueService {
-  private apiUrl = 'https://localhost:5001/api/queue';
+  private apiUrl = 'https://localhost:44388/api/queue';
 
   constructor(private http: HttpClient) {}
 
