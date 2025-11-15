@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { QueueService } from '../../services/queue.service';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-receive',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './receive.component.html',
   styleUrl: './receive.component.scss'
 })

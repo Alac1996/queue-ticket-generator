@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { QueueService } from '../../services/queue.service';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-reset',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './reset.component.html',
   styleUrls: ['./reset.component.scss']
 })
